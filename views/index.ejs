@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Document</title>
+    <link rel="stylesheet" href="main/styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="heading">
+            <h1>Infos-Posts</h1>
+            <a href="/post" class="btn">Post</a>
+        </div>
+    </header>
+
+    <section>
+        <% if(locals.posts){ %>
+            <% posts.forEach((post) => { %>
+            <div class="container">
+                <div class="content-img">
+                    <img src="https://statusneo.com/wp-content/uploads/2023/02/MicrosoftTeams-image551ad57e01403f080a9df51975ac40b6efba82553c323a742b42b1c71c1e45f1.jpg" alt="" width="200px">
+                </div>
+                 <div class="content-post">
+                        <div class="top-contain">
+                            <small><%= post.data %></small>
+                            <div class="social">
+                                <button><i class='bx bx-like'>1</i></button>
+                                <button><i class='bx bx-dislike'>1</i></button>
+                            </div>
+                        </div>
+                        <div class="message-post">
+                            <p><%= post.post %></p>
+                            <small>By: <%= post.hauteur %></small>
+                        </div>
+                    </div>
+            </div>
+            <% }); %>
+        <% }else{%>
+            <p>The information not found</p>
+        <% } %>
+        </section>
+
+   
+    
+</body>
+</html>
